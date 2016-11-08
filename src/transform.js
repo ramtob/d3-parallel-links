@@ -1,6 +1,4 @@
-export default function () {
-    return 42;
-};
+import {isMethodExact} from "./config";
 
 /**
  * @param {number} targetDistance
@@ -57,18 +55,10 @@ function calcTranslationApproximate(targetDistance, point0, point1) {
     };
 }
 
-/**
- * @description
- * Select calculation method: exact or approximate.
- * @param {boolean} on Set exact calculation
- */
-function setCalculationExact(on) {
-    this.calcTranslation =
-        (on ? ParallelLinksExample.calcTranslationExact :
-            ParallelLinksExample.calcTranslationApproximate);
-}
-
 function transform(d) {
-    var translation = that.calcTranslation(d.targetDistance, d.source, d.target);
+    let calcTranslation = isMethodExact() ? calcTranslationExact : calcTranslationApproximate;
+    var translation = calcTranslation(d.targetDistance, d.source, d.target);
     return `translate (${translation.dx}, ${translation.dy})`;
 }
+
+export {transform};
