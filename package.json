@@ -17,14 +17,14 @@
   },
   "scripts": {
     "pretest": "rimraf build && mkdir build && rollup -f umd -n d3 -o build/d3-parallel-links.js -- index.js",
-    "test": "tape 'test/**/*-test.js'",
+    "test": "node_modules/.bin/jasmine-node.cmd spec",
     "prepublish": "npm run test && uglifyjs build/d3-parallel-links.js -c -m -o build/d3-parallel-links.min.js",
     "postpublish": "zip -j build/d3-parallel-links.zip -- LICENSE README.md build/d3-parallel-links.js build/d3-parallel-links.min.js"
   },
   "devDependencies": {
+    "jasmine-node": "^1.14.5",
     "rimraf": "^2.5.4",
     "rollup": "0.27",
-    "tape": "4",
     "uglify-js": "2"
   }
 }
