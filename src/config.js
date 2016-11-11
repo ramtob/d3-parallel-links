@@ -1,6 +1,4 @@
-export default function () {
-    return 42;
-};
+//"use strict";
 
 var _isMethodExact = true;
 
