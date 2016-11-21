@@ -29,7 +29,7 @@ function initLinks(links, LINK_WIDTH ) {
     var linksFromNodes = {};
     links.forEach(function (val, idx) {
         var sid = val.source,
-            tid = val.targetID,
+            tid = val.target,
             key = (sid < tid ? sid + "," + tid : tid + "," + sid);
         if (linksFromNodes[key] === undefined) {
             linksFromNodes[key] = [idx];
