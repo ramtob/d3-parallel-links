@@ -1,11 +1,12 @@
 {
   "name": "d3-parallel-links",
   "version": "0.0.1",
-  "description": "Enables multiple parallel links between two nodes in d3.js graphs",
+  "description": "Computes multiple parallel links between two nodes in graphs",
   "author": "Ram Tobolski",
   "keywords": [
     "d3",
-    "d3-force"
+    "force",
+    "graph"
   ],
   "license": "BSD-3-Clause",
   "main": "build/d3-parallel-links.js",
