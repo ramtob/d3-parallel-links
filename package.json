@@ -17,15 +17,19 @@
     "url": "https://github.com/ramtob/d3-parallel-links.git"
   },
   "scripts": {
-    "pretest": "rimraf build && mkdir build && rollup -f umd -n d3 -o build/d3-parallel-links.js -- index.js",
+    "pretest": "rimraf build && mkdir build && rollup -c",
     "test": "node_modules/.bin/jasmine-node.cmd spec",
     "prepublish": "npm run test && uglifyjs build/d3-parallel-links.js -c -m -o build/d3-parallel-links.min.js",
     "postpublish": "zip -j build/d3-parallel-links.zip -- LICENSE README.md build/d3-parallel-links.js build/d3-parallel-links.min.js"
   },
   "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
     "jasmine-node": "^1.14.5",
     "rimraf": "^2.5.4",
     "rollup": "0.27",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
     "uglify-js": "2"
   }
 }
