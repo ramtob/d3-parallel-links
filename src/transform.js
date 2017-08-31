@@ -10,14 +10,14 @@ import {isMethodExact} from "./config";
  * targetDistance
  */
 function calcTranslationExact(targetDistance, point0, point1) {
-    var x1_x0 = point1.x - point0.x,
+    let x1_x0 = point1.x - point0.x,
         y1_y0 = point1.y - point0.y,
         x2_x0, y2_y0;
     if (y1_y0 === 0) {
         x2_x0 = 0;
         y2_y0 = targetDistance;
     } else {
-        var angle = Math.atan((x1_x0) / (y1_y0));
+        let angle = Math.atan((x1_x0) / (y1_y0));
         x2_x0 = -targetDistance * Math.cos(angle);
         y2_y0 = targetDistance * Math.sin(angle);
     }
@@ -37,7 +37,7 @@ function calcTranslationExact(targetDistance, point0, point1) {
  * the condition: targetDistance < distance < 1.42 * targetDistance
  */
 function calcTranslationApproximate(targetDistance, point0, point1) {
-    var x1_x0 = point1.x - point0.x,
+    let x1_x0 = point1.x - point0.x,
         y1_y0 = point1.y - point0.y,
         x2_x0, y2_y0;
     if (targetDistance === 0) {
@@ -57,7 +57,7 @@ function calcTranslationApproximate(targetDistance, point0, point1) {
 
 function transform(d) {
     let calcTranslation = isMethodExact() ? calcTranslationExact : calcTranslationApproximate;
-    var translation = calcTranslation(d.targetDistance, d.source, d.target);
+    let translation = calcTranslation(d.targetDistance, d.source, d.target);
     return `translate (${translation.dx}, ${translation.dy})`;
 }
 

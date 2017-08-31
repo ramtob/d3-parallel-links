@@ -1,6 +1,6 @@
 //"use strict";
 
-var _isMethodExact = true;
+let _isMethodExact = true;
 
 function isMethodExact() {
     return _isMethodExact;
@@ -25,10 +25,10 @@ export {setMethodApprox};
  * @param links the link array
  * @param LINK_WIDTH default link width in pixels
  */
-function initLinks(links, LINK_WIDTH ) {
-    var linksFromNodes = {};
+function initLinks(links, LINK_WIDTH = 2) {
+    let linksFromNodes = {};
     links.forEach(function (val, idx) {
-        var sid = val.source,
+        let sid = val.source,
             tid = val.target,
             key = (sid < tid ? sid + "," + tid : tid + "," + sid);
         if (linksFromNodes[key] === undefined) {
