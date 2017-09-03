@@ -1,6 +1,6 @@
 # d3-parallel-links
 
-YOUR DESCRIPTION HERE
+A small plugin for graph-drawing apps, and specifically for apps that use d3.js, that makes it possible to draw several straight, parallel links between any two nodes in the graph
 
 ## Installing
 
