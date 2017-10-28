@@ -9,3 +9,7 @@ If you use NPM, `npm install d3-parallel-links`. Otherwise, download the [latest
 ## API Reference
 
 YOUR API DOCUMENTATION HERE. Use bold for symbols (such as constructor and method names) and italics for instances. See the other D3 modules for examples.
+
+d3.**parallelLinksInitLinks**(links, LINK_WIDTH = 2)
+
+Calling this method is a necessary init step. The first parameter is the links array of your graph data. The second, optional parameter, informs _parallel-links_ about how your style your link widths in pixels. _parallel-links_ uses it to set the spacing between each two adjacent parallel links.
