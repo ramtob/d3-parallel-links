@@ -1,14 +1,12 @@
 # d3-parallel-links
 
-A small plugin for graph-drawing apps, and specifically for apps that use d3.js, that makes it possible to draw several straight, parallel links between any two nodes in the graph
+A small plugin for apps that draw static or dynamic (moving) graphs, and specifically for apps that use d3.js, that makes it possible to draw several straight, parallel links between any two nodes in the graph
 
 ## Installing
 
 If you use NPM, `npm install d3-parallel-links`. Otherwise, download the [latest release](https://github.com/d3/d3-parallel-links/releases/latest).
 
 ## API Reference
-
-YOUR API DOCUMENTATION HERE. Use bold for symbols (such as constructor and method names) and italics for instances. See the other D3 modules for examples.
 
 d3.**parallelLinksInitLinks**(links, LINK_WIDTH = 2)
 
@@ -36,4 +34,10 @@ This method does the actual drawing of the parallel links, by computing a css tr
                 })  
                 .attr('transform', d3.parallelLinksTransform)
                 
-                
+d3.**parallelLinksSetMethodExact**(on: boolean)  
+d3.**parallelLinksSetMethodApprox**()  
+d3.**parallelLinksIsMethodExact**(): boolean  
+
+Optional: parallel-link has two alternative mode of computation. In the _exact mode_ (which is the default), it uses trigonometric and inverse trigonometric functions. In the _approximate mode_, it uses only arithmetic operators. This may yield better performance. You can use the above three methods to switch between modes, and/or get the current mode.  
+
+if you are interested in more details on the mathematics, see [here](http://webiks.com/d3-js-force-layout-straight-parallel-links/)
