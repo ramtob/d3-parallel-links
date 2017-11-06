@@ -1,6 +1,6 @@
 {
   "name": "d3-parallel-links",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Computes multiple parallel links between two nodes in graphs",
   "author": "Ram Tobolski",
   "keywords": [
