@@ -31,6 +31,6 @@
     "rollup": "0.27",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "uglify-js": "2"
+    "uglify-js": "^2.8.29"
   }
 }
